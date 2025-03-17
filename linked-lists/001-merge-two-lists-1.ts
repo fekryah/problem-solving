@@ -1,5 +1,4 @@
 import { LinkedList } from '../shared/classes/linked-list';
-import { printLinkedList } from '../shared/util/linked-list';
 
 export function mergeTwoListsIterativly(headOne: LinkedList, headTwo: LinkedList) {
   const mainHead = headOne.value < headTwo.value ? headOne : headTwo;
@@ -33,21 +32,3 @@ export function mergeTwoListsIterativly(headOne: LinkedList, headTwo: LinkedList
 
   return mainHead;
 }
-
-// 2 6 7 8
-const list1 = new LinkedList(2);
-list1.next = new LinkedList(6);
-list1.next.next = new LinkedList(7);
-list1.next.next.next = new LinkedList(8);
-
-// 1 3 4 5 9 10
-const list2 = new LinkedList(1);
-list2.next = new LinkedList(3);
-list2.next.next = new LinkedList(4);
-list2.next.next.next = new LinkedList(5);
-list2.next.next.next.next = new LinkedList(9);
-list2.next.next.next.next.next = new LinkedList(10);
-
-const mergedHead = mergeTwoListsIterativly(list1, list2);
-
-printLinkedList(mergedHead);
